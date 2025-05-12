@@ -1,6 +1,6 @@
 ## 📘 Trabajo de fin de grado
 
-Este sistema permite desplegar localmente un entorno de inteligencia artificial basado en modelos de lenguaje grande (LLM), integrando los componentes necesarios para su inferencia, visualización web e interacción. 
+Este sistema permite desplegar localmente un entorno de inteligencia artificial basado en modelos de lenguaje de gran tamaño (LLM), integrando los componentes necesarios para su inferencia, visualización web e interacción. 
 
 ---
 
@@ -9,7 +9,7 @@ Este sistema permite desplegar localmente un entorno de inteligencia artificial 
 
 ✅ Generación automática de preguntas relevantes. A partir de los fragmentos de texto extraídos, se generan automáticamente preguntas pertinentes que permiten evaluar la comprensión del contenido o la resolución de retos presentes en el documento.
 
-✅ Producción de cadenas de razonamiento ("Chain of Thought"). Para cada pregunta generada, el sistema produce una cadena de pensamiento lógica que representa el proceso mental paso a paso para llegar a la respuesta, mejorando la explicabilidad del modelo.
+✅ Producción de cadenas de razonamiento (Chain of Thought). Para cada pregunta generada, el sistema produce una cadena de pensamiento lógica que representa el proceso mental paso a paso para llegar a la respuesta, mejorando la explicabilidad del modelo.
 
 ✅ Generación de respuestas finales con contexto. Se genera una respuesta final fundamentada, basada en el contenido original del documento y en la cadena de pensamiento previa, asegurando precisión y coherencia con el material fuente.
 
@@ -19,9 +19,9 @@ Este sistema permite desplegar localmente un entorno de inteligencia artificial 
 
 ### ⚙️ Funcionalidades del Sistema de Fine-Tuning con Datos de Ciberseguridad
 
-✅ Carga eficiente del modelo LLM con Unsloth. Utiliza la librería Unsloth para cargar y preparar el modelo DeepSeek-R1-Distill-Qwen-7B, reduciendo el consumo de memoria y acelerando el entrenamiento mediante el uso de técnicas optimizadas (como el uso de Flash Attention y carga en 4 bits).
+✅ Carga eficiente del modelo LLM con Unsloth. Utiliza la librería Unsloth para cargar y preparar el modelo DeepSeek-R1-Distill-Qwen-7B, reduciendo el consumo de memoria y acelerando el entrenamiento mediante el uso de técnicas optimizadas.
 
-✅ Integración de LoRA para Fine-Tuning Acelerado. Se aplica LoRA (Low-Rank Adaptation) con configuración personalizada (r=16, alpha=16) para modificar selectivamente capas del modelo, permitiendo un entrenamiento eficiente y económico sin necesidad de ajustar todos los parámetros del modelo base.
+✅ Integración de LoRA para Fine-Tuning Acelerado. Se aplica LoRA (Low-Rank Adaptation) con configuración personalizada para modificar selectivamente capas del modelo, permitiendo un entrenamiento eficiente y económico sin necesidad de ajustar todos los parámetros del modelo base.
 
 ✅ Personalización del estilo de prompt. El sistema adapta el formato de los datos al estilo típico de chat (question, thought, answer)
 
