@@ -1,16 +1,44 @@
 version: "3.8"
 
 services:
+  ollama:
+    image: ollama/ollama
+    ports:
+      - "11434:11434"
+    volumes:
+      - ollama-data:/root/.ollama
+    healthcheck:
+      test:
+        [
+          "CMD-SHELL",
+          "bash",
+          "-c",
+          "{ printf >&3 'GET / HTTP/1.0\\r\\n\\r\\n'; cat <&3; } 3<>/dev/tcp/localhost/11434 | grep 'Ollama is' || exit 1",
+        ]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+      start_period: 10s # Give more time for initial startup
+    restart: unless-stopped
+    entrypoint: ["sh", "-c"]
+    command: >
+      "ollama serve & sleep 10 && 
+      ollama pull hf.co/West1125/modeloTFG_1.5B_6.1_GGUF:Q4_K_M && 
+      wait"
+
   open-webui:
-    build: .
-    container_name: open-webui
+    image: ghcr.io/open-webui/open-webui:main
+    depends_on:
+      ollama:
+        condition: service_healthy
     ports:
       - "3000:8080"
+    environment:
+      - OLLAMA_API_BASE_URL=http://ollama:11434
     volumes:
-      - ollama:/root/.ollama
-      - open-webui:/app/backend/data
-    restart: always
+      - open-webui-data:/app/backend/data
+    restart: unless-stopped
 
 volumes:
-  ollama:
-  open-webui:
+  ollama-data:
+  open-webui-data:
