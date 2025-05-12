@@ -1,6 +1,6 @@
 ## 📘 Trabajo de fin de grado
 
-Este proyecto en **Python** permite generar un dataset en formato **JSON** a partir de archivos **PDF sin estructura fija**, utilizando **LLM`s** para automatizar el siguiente flujo:
+Este sistema permite desplegar localmente un entorno de inteligencia artificial basado en modelos de lenguaje grande (LLM), integrando los componentes necesarios para su inferencia, visualización web e interacción. 
 
 ---
 
@@ -45,6 +45,19 @@ Este proyecto en **Python** permite generar un dataset en formato **JSON** a par
 
 
 ✅ Soporte para datasets personalizados. Admite la carga de datasets en Hugging Face (NachoRedNav/Def-All-2) que contienen preguntas reales extraídas de procedimientos de pentesting, permitiendo un entrenamiento centrado en contextos de ciberseguridad realistas.
+
+---
+
+### ⚙️ Funcionalidades del Sistema de Inferencia Local con Docker, Ollama y Open WebUI
+
+✅ Despliegue automatizado con Docker Compose. Mediante el uso de docker-compose, el sistema configura y ejecuta automáticamente los contenedores necesarios, definiendo redes, volúmenes persistentes y dependencias entre servicios, lo que facilita la replicabilidad y portabilidad del entorno.
+
+✅ Servicio Ollama: backend de inferencia LLM. Utiliza la imagen oficial de Ollama, una herramienta ligera para servir modelos LLM en local.
+
+✅ Servicio Open WebUI: interfaz gráfica para chat con LLM. Utiliza la imagen de Open WebUI, una interfaz web moderna y amigable para interactuar con LLMs servidos por Ollama.
+
+
+✅ Arquitectura modular y extensible. El sistema puede ampliarse fácilmente para servir nuevos modelos, cambiar endpoints o añadir autenticación.
 
 ---
 
