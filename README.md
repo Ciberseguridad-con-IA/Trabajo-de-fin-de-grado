@@ -61,6 +61,12 @@ Este sistema permite desplegar localmente un entorno de inteligencia artificial 
 
 ---
 
+## 📁 Walktrougths
+
+Esta carpeta contiende todos los walktrougts usados para el desarrollo del dataset, se elaboraron resolviendo máquinas de VulHub.
+
+---
+
 ### 📦 Apunte
 
 En este repositorio solo se muestran los scripts, para una correcta ejecución se deberan usar en el entorno de **Google Colab**, con las claves API's necesarias, y la configuración pertinente.
